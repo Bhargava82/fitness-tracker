@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(logger("dev"));
+// app.use(logger("dev"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -82,7 +82,7 @@ connection.on("error", (err) => {
 //     });
 // });
 
-app.use(requir("./routes/api-routes"));
+app.use(require("./routes/api-routes"));
 app.use(require("./routes/html-routes"));
 
 app.listen(PORT, () => {
